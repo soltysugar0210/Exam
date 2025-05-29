@@ -15,7 +15,7 @@
 <body>
     <h3>ようこそ <%= loginUser %> さん</h3>
     <ul>
-        <li><a href="student.jsp">学生情報</a></li>
+        <li><a href="student.html">学生情報</a></li>
         <li><a href="grade.jsp">成績</a></li>
         <li><a href="admin.jsp">管理者用</a></li>
         <li><a href="logout.jsp">ログアウト</a></li>

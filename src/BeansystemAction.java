@@ -12,7 +12,7 @@ public class BeansystemAction extends Action {
         String className = request.getParameter("className");
 
         StulistBean Sl = new StulistBean();
-        Sl.setName(id);
+        Sl.setId(id);
         Sl.setName(name);
         Sl.setClassName(className);
 
