@@ -16,7 +16,7 @@ public void insert(StulistBean Sl) throws Exception {
             PreparedStatement st = con.prepareStatement(
                 "INSERT INTO student (id, name, className) VALUES (?, ?, ?)")) {
 
-                st.setString(1, Sl.getId());
+                st.setInt(1, Sl.getId());
                 st.setString(2, Sl.getName());
                 st.setString(3, Sl.getClassName());
 
@@ -59,7 +59,7 @@ public List<StulistBean> search(String keyword) throws Exception {
         ResultSet rs = st.executeQuery();
         while (rs.next()) {
             StulistBean Sl = new StulistBean();
-            Sl.setId(rs.getString("id"));
+            Sl.setId(rs.getInt("id"));
             Sl.setName(rs.getString("name"));
             Sl.setClassName(rs.getString("className"));
             list.add(Sl);

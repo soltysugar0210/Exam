@@ -6,8 +6,8 @@ import tool.Action;
 
 public class BeansystemAction extends Action {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-    	
-        String id = request.getParameter("id");
+
+        int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
         String className = request.getParameter("className");
 

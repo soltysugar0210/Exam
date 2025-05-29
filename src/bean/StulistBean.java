@@ -3,15 +3,15 @@ package bean;
 import java.io.Serializable;
 
 public class StulistBean implements Serializable {
-    private String id;
+    private int id;
     private String name;
     private String className; // 予約語「class」を避けるため変更
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) { // 戻り値をStringからvoidに修正
+    public void setId(int id) { // 戻り値をStringからvoidに修正
         this.id = id; // セミコロン追加
     }
 
