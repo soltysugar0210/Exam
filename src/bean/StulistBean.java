@@ -2,44 +2,32 @@ package bean;
 
 import java.io.Serializable;
 
-public class StulistBean implements Serializable{
-	  private String name;
-	  private String author;
-	  private String genre;
-	  private String date;
-	  private String used;
-	  
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getAuthor() {
-		return author;
-	}
-	public void setAuthor(String author) {
-		this.author = author;
-	}
-	public String getGenre() {
-		return genre;
-	}
-	public void setGenre(String genre) {
-		this.genre = genre;
-	}
-	public String getDate() {
-		return date;
-	}
-	public void setDate(String date) {
-		this.date = date;
-	}
-	public String getUsed() {
-		return used;
-	}
-	public void setUsed(String used) {
-		this.used = used;
-	}
+public class StulistBean implements Serializable {
+    private String id;
+    private String name;
+    private String className; // 予約語「class」を避けるため変更
 
+    public String getId() {
+        return id;
+    }
 
+    public void setId(String id) { // 戻り値をStringからvoidに修正
+        this.id = id; // セミコロン追加
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getClassName() { // フィールド名に合わせて変更
+        return className;
+    }
+
+    public void setClassName(String className) { // フィールド名に合わせて変更
+        this.className = className;
+    }
 }
