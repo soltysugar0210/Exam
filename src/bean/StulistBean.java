@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class StulistBean implements Serializable{
 	  private String name;
-	  private String class;
+	  private String author;
 	  private String genre;
 	  private String date;
 	  private String used;
