@@ -4,26 +4,28 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import bean.UserBean;
+
 public class LoginDAO extends DAO {
-
-    public boolean checkLogin(String username, String password) throws Exception {
-        boolean isValid = false;
-
+    public UserBean checkLogin(int id, String password) throws Exception {
+        UserBean user = null;
         try (Connection con = getConnection();
              PreparedStatement st = con.prepareStatement(
-                 "SELECT * FROM users WHERE username = ? AND password = ?")) {
-
-            st.setString(1, username);
+                 "SELECT * FROM users WHERE id = ? AND password = ?")) {
+            st.setInt(1, id);
             st.setString(2, password);
-
             try (ResultSet rs = st.executeQuery()) {
                 if (rs.next()) {
-                    isValid = true;
+                    user = new UserBean(
+                        rs.getInt("id"),
+                        rs.getInt("school_id"),
+                        rs.getString("password"),
+                        rs.getString("name"),
+                        rs.getInt("privilege")
+                    );
                 }
             }
         }
-
-        return isValid;
+        return user;
     }
 }
-

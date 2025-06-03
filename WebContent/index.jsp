@@ -1,20 +1,24 @@
-<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="ja">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>ログイン</title>
 </head>
 <body>
-    <h2>ログイン</h2>
+    <h1>ログイン</h1>
     <form action="Login.action" method="post">
-        ユーザー名：<input type="text" name="username" required><br><br>
-        パスワード：<input type="password" name="password" required><br><br>
+        <label>ID: <input type="text" name="id"></label><br>
+        <label>パスワード: <input type="password" name="password"></label><br>
         <input type="submit" value="ログイン">
+        <%
+            String error = (String)request.getAttribute("error");
+            if (error != null) {
+        %>
+            <p style="color:red"><%= error %></p>
+        <%
+            }
+        %>
     </form>
-
-    <p style="color:red;">
-        <%= request.getAttribute("error") != null ? request.getAttribute("error") : "" %>
-    </p>
 </body>
 </html>

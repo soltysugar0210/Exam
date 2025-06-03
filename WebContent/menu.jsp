@@ -1,24 +1,27 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%
-    String loginUser = (String) session.getAttribute("loginUser");
-    if (loginUser == null) {
-        response.sendRedirect("index.jsp");
-        return;
-    }
-%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="bean.UserBean" %>
 <!DOCTYPE html>
-<html lang="ja">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>メニュー</title>
 </head>
 <body>
-    <h3>ようこそ <%= loginUser %> さん</h3>
-    <ul>
-        <li><a href="student.html">学生情報</a></li>
-        <li><a href="grade.jsp">成績</a></li>
-        <li><a href="admin.jsp">管理者用</a></li>
-        <li><a href="logout.jsp">ログアウト</a></li>
-    </ul>
+    <%
+        UserBean user = (UserBean)session.getAttribute("loginUser");
+        System.out.println("menu.jsp: loginUser = " + (user != null ? user.getName() : "null") + ", Session ID = " + session.getId());
+        if (user != null) {
+    %>
+        <h1>ようこそ、<%= user.getName() %> さん！</h1>
+        <p>ID: <%= user.getId() %></p>
+    <%
+        } else {
+            System.out.println("menu.jsp: loginUser is null, displaying message");
+    %>
+        <p>ログインしてください。</p>
+    <%
+        }
+    %>
+    <a href="<%= request.getContextPath() %>/student_add.html">学生情報へ</a>
 </body>
 </html>

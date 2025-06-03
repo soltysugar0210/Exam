@@ -14,7 +14,7 @@
     %>
         <p>【学生番号】<%= Sl.getId() %></p>
         <p>【名前】<%= Sl.getName() %></p>
-        <p>【クラス】<%= Sl.getClassName() %></p>
+        <p>【クラス】<%= Sl.getClass_name() %></p>
 
     <br>
         <input type="button" value="ホームに戻る" onclick="location.href='index.jsp'">
