@@ -30,6 +30,21 @@
     <%
         }
     %>
+    <%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ page import="bean.StulistBean" %>
+    <%
+        StulistBean Sl = (StulistBean) request.getAttribute("Sl");
+    %>
+        <p>【学生番号】<%= Sl.getId() %></p>
+        <p>【クラス】<%= Sl.getClass_name() %></p>
+        <p>【名前】<%= Sl.getName() %></p>
+        <p>【入学年度】<%=Sl.getEntrance_year() %></p>
+
+
+
+    <br>
+        <input type="button" value="ホームに戻る" onclick="location.href='index.jsp'">
+
     <input type="button" value="続けて登録" onclick="location.href='<%= request.getContextPath() %>/student_add.html'">
     <input type="button" value="メニューに戻る" onclick="location.href='<%= request.getContextPath() %>/menu.jsp'">
     <input type="button" value="ホームに戻る" onclick="location.href='<%= request.getContextPath() %>/index.jsp'">
