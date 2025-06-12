@@ -22,8 +22,7 @@
     <%
         }
     %>
-    <a href="<%= request.getContextPath() %>/student_menu.jsp">学生情報へ</a>
-    <a href="<%= request.getContextPath() %>/grade_menu.jsp">科目情報へ</a>
-    <a href="<%= request.getContextPath() %>/teacher_menu.jsp">教員情報へ</a>
+    <a href="<%= request.getContextPath() %>/teacher_add.jsp">教員登録へ</a>
+    <a href="<%= request.getContextPath() %>/teacher_add.jsp">教員情報へ</a>
 </body>
 </html>
